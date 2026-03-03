@@ -15,6 +15,12 @@ Things changed:
 
 It's recommended to install this script via systemd, see the `.service` file provided. You can install it as follows:
 
+requirements:
+- ipmitool
+- lm-sensors
+
+apt update
+apt install -y ipmitool lm-sensors
 ```
 # Place the service file in the systemd directory
 nano /etc/systemd/system/fan-controller.service
