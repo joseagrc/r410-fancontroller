@@ -1,10 +1,14 @@
 [Unit]
-Description=Fan controller
+Description=Dell R410 Fan Controller
 After=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/python3 /root/scripts/fan.py
-#Restart=on-failure
+Type=simple
+ExecStart=/usr/bin/python3 -u /root/scripts/fan.py
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
